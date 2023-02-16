@@ -82,4 +82,27 @@ pnpm add -D @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-pl
 }
 ```
 
+## `antd@4`
+1. 由于 antd 组件的默认文案是英文，所以需要修改为中文
+```jsx
+import { ConfigProvider } from 'antd';
+// 因为替换moment 所以需要dayjs 全局locale
+import 'dayjs/locale/zh-cn';
+import zhCN from 'antd/es/locale/zh_CN';
 
+const App=()=>{
+  return (
+    <ConfigProvider locale={zhCN}>
+    </ConfigProvider>
+  )
+}
+```
+2. `DatePicker` 替换成 `dayjs`日期库
+
+[替换 Moment.js](https://4x.ant.design/docs/react/replace-moment-cn)
+
+3. 样式问题处理
+vite 不用loader 但需要原始解析类库
+故只需引入 less --save-dev
+
+4. 样式的按需加载
