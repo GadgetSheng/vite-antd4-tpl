@@ -102,7 +102,19 @@ const App=()=>{
 [替换 Moment.js](https://4x.ant.design/docs/react/replace-moment-cn)
 
 3. 样式问题处理
+
 vite 不用loader 但需要原始解析类库
 故只需引入 less --save-dev
 
 4. 样式的按需加载
+
+`vite-plugin-style-import`
+>`consola` is required
+
+DayJSPicker 另行处理
+
+
+## unocss
+unocss.config.ts
+
+unocss/vite

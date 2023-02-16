@@ -1,7 +1,8 @@
 import { Dayjs } from 'dayjs';
 import dayjsGenerateConfig from 'rc-picker/es/generate/dayjs';
 import generatePicker from 'antd/es/date-picker/generatePicker';
+import 'antd/es/date-picker/style/index.less';
 
-const DatePicker = generatePicker<Dayjs>(dayjsGenerateConfig);
+const DayJSPicker = generatePicker<Dayjs>(dayjsGenerateConfig);
 
-export default DatePicker;
+export default DayJSPicker;

@@ -1,12 +1,11 @@
 import { useState } from 'react';
-import { ConfigProvider } from 'antd';
+import { ConfigProvider, Button } from 'antd';
 import zhCN from 'antd/es/locale/zh_CN';
 import 'dayjs/locale/zh-cn';
-
-import DatePicker from './components/DatePicker';
+import DayJSPicker from './components/DayJSPicker';
 import reactLogo from './assets/react.svg';
 import './App.css';
-import 'antd/dist/antd.css';
+// import 'antd/dist/antd.css';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -24,16 +23,19 @@ function App() {
         </div>
         <h1>Vite + React</h1>
         <div className="card">
-          <button onClick={() => setCount((count) => count + 1)}>
+          <Button onClick={() => setCount((count) => count + 1)}>
             count is
 
             {count}
-          </button>
-          <DatePicker.RangePicker onChange={(data) => {
-            const [date1, date2]:any = data;
-            console.log(typeof date1, date1);
-            console.log(typeof date2, date2);
-          }}
+          </Button>
+          <br />
+          <DayJSPicker.RangePicker
+            className="custom-rule mt-4"
+            onChange={(data) => {
+              const [date1, date2]:any = data;
+              console.log(typeof date1, date1);
+              console.log(typeof date2, date2);
+            }}
           />
           <p>
             Edit
